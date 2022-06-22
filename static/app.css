@@ -1,0 +1,18 @@
+body {
+    margin: 0 auto;
+}
+
+/*Style lié à la sidebar*/
+.sidebar {
+    background-color: #4ac1f7;
+    padding:5%;
+}
+.sidebar img {
+    width: 15%;
+    border-radius: 100px;
+}
+
+img {
+    width: 25%;
+    border-radius: 10px;
+}
