@@ -1,13 +1,28 @@
-<html>
+{% load static %}
+
+<html lang="fr">
     <head>
+        <meta name="Autheur" content="Loïc Calcagno">
+        <meta name="Description" content="Blog photo créer entièrement avec le framework Django">
         <title>Blog photo</title>
+        <link rel="stylesheet" href="{% static 'app.css' %}">
+        <link rel="icon" href="static/favicon.png">
     </head>
     <body>
-        <h1>Blog photo</h1>
-        {% block content %}{% endblock content %}
-        {% if user.is_authenticated %}
-            <p>Vous êtes connecté en tant que {{request.user}}.</p> <a href="{% url 'logout' %}"> Se déconnecter</a>
-            <p>Voulez-vous <a href="{% url 'change_password' %}">changer votre mot de passe?</a></p>
-        {% endif %}
+        <div class="sidebar">
+            <h1>Blog photo</h1>
+            {% if user.is_authenticated %}
+                <p>Hey, salut {{request.user}} ! </p>
+                <img src="static/avatar.png" alt="avatar">
+                <p>Acceuil</p>
+                <p>Télécharger une photo de profil</p>
+                <p>Changer la photo de profil</p>
+                <p><a href="{% url 'change_password' %}">Changer le mot de passe</a></p>
+                <p><a href="{% url 'logout' %}"> Se déconnecter</a></p>
+            {% endif %}
+        </div>
+        <div class="main">
+            {% block content %}{% endblock content %}
+        </div>
     </body>
 </html>
