@@ -54,6 +54,10 @@ body {
     padding: 5%;
     left: 500px;
 }
+.main a {
+    color: #1b2068;
+    font-style: italic;
+}
 h2 {
     font-size: 25px;
     margin-bottom: 45px;
@@ -68,4 +72,11 @@ h2 {
 .photo img {
     border-radius: 15px;
     width: 80%;
+}
+.photo img:hover{
+    transform: scale(1.1);
+    transition: ease-in-out 0.5s ;
+}
+.billet{
+    height: 350px;
 }

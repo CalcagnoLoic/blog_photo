@@ -4,11 +4,14 @@
     <h2>Photos</h2>
 
     <div class="grid-container">
-        {% for photo in photos %}
-        <div class="photo">
-            <img src="{{photo.image.url}}" alt="photo">
-            <p>{{photo.caption}}</p>
-        </div>
+        {% for blog in blogs %}
+            <div class="photo">
+                <a href="{% url 'view_blog' blog.id %}">
+                    <h4>Billet n°{{blog.id}} : {{blog.title}}</h4>
+                    <img src="{{blog.photo.image.url}}" alt="photo">
+                    <p>{{photo.caption}}</p>
+                </a>
+            </div>
         {% endfor %}
     </div>
 
