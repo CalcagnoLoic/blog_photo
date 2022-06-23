@@ -1,18 +1,82 @@
 body {
     margin: 0 auto;
+    font-family: Arial;
+}
+.container{
+    display: flex;
+}
+.credit {
+    text-align: center;
+    margin-top: 45px;
+}
+.credit a{
+    text-decoration: none;
+    color: black;
+    font-style: italic;
 }
 
 /*Style lié à la sidebar*/
 .sidebar {
-    background-color: #4ac1f7;
+    position: fixed;
+    overflow: scroll;
+    background-color: #155a82;
     padding:5%;
+    color: white;
+    width: 200px;
+    top: 0;
+    bottom: 0;
 }
-.sidebar img {
-    width: 15%;
+.sidebar a {
+    text-decoration: none;
+    color: white;
+}
+.p-anim:hover {
+    cursor: pointer;
+    font-size: 20px;
+}
+.p-del:hover {
+    cursor: pointer;
+    font-size: 20px;
+    color: red;
+}
+.avatar {
+    display: block;
+    margin: 0 auto;
+    width: 150px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     border-radius: 100px;
 }
 
-img {
-    width: 25%;
-    border-radius: 10px;
+/*Style lié à main*/
+.main {
+    margin-left: 350px;
+    padding: 5%;
+    left: 500px;
+}
+.main a {
+    color: #1b2068;
+    font-style: italic;
+}
+h2 {
+    font-size: 25px;
+    margin-bottom: 45px;
+}
+.photo {
+    text-align: center;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.photo img {
+    border-radius: 15px;
+    width: 80%;
+}
+.photo img:hover{
+    transform: scale(1.1);
+    transition: ease-in-out 0.5s ;
+}
+.billet{
+    height: 350px;
 }
