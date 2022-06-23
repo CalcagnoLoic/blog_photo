@@ -6,23 +6,27 @@
         <meta name="Description" content="Blog photo créer entièrement avec le framework Django">
         <title>Blog photo</title>
         <link rel="stylesheet" href="{% static 'app.css' %}">
-        <link rel="icon" href="static/favicon.png">
+        <link rel="icon" href="{% static 'favicon.png' %}">
     </head>
     <body>
+    <div class="container">
         <div class="sidebar">
             <h1>Blog photo</h1>
             {% if user.is_authenticated %}
                 <p>Hey, salut {{request.user}} ! </p>
-                <img src="static/avatar.png" alt="avatar">
-                <p>Acceuil</p>
-                <p>Télécharger une photo de profil</p>
-                <p>Changer la photo de profil</p>
-                <p><a href="{% url 'change_password' %}">Changer le mot de passe</a></p>
-                <p><a href="{% url 'logout' %}"> Se déconnecter</a></p>
+                <img src="static/avatar.png" alt="avatar" class="avatar">
+                <p class="p-anim"><a href="{% url 'home' %}">Acceuil</a></p>
+                <p class="p-anim">Télécharger une photo de profil</p>
+                <p class="p-anim">Changer la photo de profil</p>
+                <p class="p-anim"><a href="{% url 'change_password' %}">Changer le mot de passe</a></p>
+                <p class="p-del"><a href="{% url 'logout' %}"> Se déconnecter</a></p>
             {% endif %}
         </div>
         <div class="main">
             {% block content %}{% endblock content %}
+            <p class="credit">Blog photo réalisé par <a href="https://github.com/CalcagnoLoic/blog_photo">@Loïc Calcagno</a> avec le framework Django</p>
         </div>
+    </div>
+
     </body>
 </html>
