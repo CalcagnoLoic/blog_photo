@@ -12,8 +12,8 @@ class ContainsLetterValidator:
 
 
 class ContainsNumberValidator:
-    def validate(self, password):
-        if not any(elem.is_digit() for elem in password):
+    def validate(self, password, user=None):
+        if not any(elem.isdigit() for elem in password):
             raise ValidationError("Le mot de passe doit contenir un nombre",
                                   code="password_no_numbers")
 

@@ -24,3 +24,4 @@ def photo_upload(request):
     return render(request, 'blog/photo_upload.html', context={'form': form})
 
 
+

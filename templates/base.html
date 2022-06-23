@@ -14,9 +14,13 @@
             <h1>Blog photo</h1>
             {% if user.is_authenticated %}
                 <p>Hey, salut {{request.user}} ! </p>
-                <img src="static/avatar.png" alt="avatar" class="avatar">
+                    {% if user.profile_photo %}
+                        <img src="{{user.profile_photo.url}}" alt="avatar" class="avatar">
+                    {% else %}
+                        <img src="{% static 'avatar.png' %}" alt="avatar" class="avatar">
+                    {% endif  %}
                 <p class="p-anim"><a href="{% url 'home' %}">Acceuil</a></p>
-                <p class="p-anim">Télécharger une photo de profil</p>
+                <p class="p-anim"><a href="{% url 'upload_profile_photo' %}">Télécharger une photo de profil</a></p>
                 <p class="p-anim">Changer la photo de profil</p>
                 <p class="p-anim"><a href="{% url 'change_password' %}">Changer le mot de passe</a></p>
                 <p class="p-del"><a href="{% url 'logout' %}"> Se déconnecter</a></p>
