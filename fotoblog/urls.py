@@ -24,24 +24,24 @@ import authentication.views
 import blog.views
 
 urlpatterns = [
-    path('blog-photo-django.herokuapp.com/admin/', admin.site.urls),
-    path('blog-photo-django.herokuapp.com/', LoginView.as_view(
+    path('admin/', admin.site.urls),
+    path('', LoginView.as_view(
         template_name='authentication/login.html'),
         name='login'),
-    path('blog-photo-django.herokuapp.com/logout/', LogoutView.as_view(), name='logout'),
-    path('blog-photo-django.herokuapp.com/change-password/', PasswordChangeView.as_view(
+    path('logout/', LogoutView.as_view(), name='logout'),
+    path('change-password/', PasswordChangeView.as_view(
         template_name='authentication/change_password.html'),
         name="change_password"),
-    path('blog-photo-django.herokuapp.com/change-password-done/', PasswordChangeDoneView.as_view(
+    path('change-password-done/', PasswordChangeDoneView.as_view(
         template_name='authentication/password_change_done.html'),
          name='password_change_done'
          ),
-    path('blog-photo-django.herokuapp.com/signup/', authentication.views.signup_page, name='signup'),
-    path('blog-photo-django.herokuapp.com/home', blog.views.home, name="home"),
-    path('blog-photo-django.herokuapp.com/photo/upload/', blog.views.photo_upload, name="photo_upload"),
-    path('blog-photo-django.herokuapp.com/photo/profile/upload', authentication.views.upload_profile_photo, name="upload_profile_photo"),
-    path('blog-photo-django.herokuapp.com/blog/create', blog.views.blog_and_photo_upload, name="blog_create"),
-    path('blog-photo-django.herokuapp.com/blog/<int:blog_id>/', blog.views.view_blog, name="view_blog")
+    path('signup/', authentication.views.signup_page, name='signup'),
+    path('home', blog.views.home, name="home"),
+    path('photo/upload/', blog.views.photo_upload, name="photo_upload"),
+    path('photo/profile/upload', authentication.views.upload_profile_photo, name="upload_profile_photo"),
+    path('blog/create', blog.views.blog_and_photo_upload, name="blog_create"),
+    path('blog/<int:blog_id>/', blog.views.view_blog, name="view_blog")
 ]
 if settings.DEBUG:
     urlpatterns += static(
