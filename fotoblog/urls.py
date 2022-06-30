@@ -24,7 +24,7 @@ import authentication.views
 import blog.views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='admin'),
     path('', LoginView.as_view(
         template_name='authentication/login.html'),
         name='login'),
@@ -43,7 +43,8 @@ urlpatterns = [
     path('blog/create', blog.views.blog_and_photo_upload, name="blog_create"),
     path('blog/<int:blog_id>/', blog.views.view_blog, name="view_blog"),
     path('blog/<int:blog_id>/edit/', blog.views.edit_blog, name="edit_blog"),
-    path('photo/upload-multiple/', blog.views.create_multiple_photos, name="create_multiple_photos")
+    path('photo/upload-multiple/', blog.views.create_multiple_photos, name="create_multiple_photos"),
+    path('follow-users/', blog.views.follow_users, name="follow-users")
 ]
 if settings.DEBUG:
     urlpatterns += static(
