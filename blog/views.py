@@ -44,7 +44,6 @@ def blog_and_photo_upload(request):
             blog.author = request.user
             blog.photo = photo
             blog.save()
-            blog.contributors.add(request.user, through_details={'contribution': 'Auteur principal'})
             return redirect('home')
     context = {
         'blog_form': blog_form,
